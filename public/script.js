@@ -55,6 +55,7 @@ const SELECTORS = {
 	SEX_MALE: '#sex-male',
 	ERROR_CONTAINER: '#error-cards',
 	ERROR_CONTAINER_EMBG: '#error-cards-embg',
+	EMBG_OUTPUT: '#embg-number',
 }
 
 const newErrorCard = (message) => {
@@ -129,7 +130,7 @@ embgDataForm.addEventListener('submit', async (e) => {
 
 	const res = generateEmbg(embgData);
 
-	const embgOutput = document.querySelector('#embg-output');
+	const embgOutput = document.querySelector(SELECTORS.EMBG_OUTPUT);
 	embgOutput.value = res;
 
 	// console.log({ res, embgData });
@@ -176,7 +177,7 @@ embgNumberForm.addEventListener('submit', async (e) => {
 
 	setErrors([], document.querySelector(SELECTORS.ERROR_CONTAINER_EMBG));
 
-	const embg = document.querySelector('#embg-number').value;
+	const embg = document.querySelector(SELECTORS.EMBG_OUTPUT).value;
 
 	const errors = validateEmbg(embg);
 
