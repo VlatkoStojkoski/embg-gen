@@ -40,10 +40,6 @@ const validate = (inputs) => {
 		errors.push('Order is required');
 	}
 
-	if (inputs.order.value.length !== 3 || isNaN(+inputs.order.value)) {
-		errors.push('Order must be a 3 digit number');
-	}
-
 	// sex validation
 	if (inputs.sex.value === '') {
 		errors.push('Sex is required');
