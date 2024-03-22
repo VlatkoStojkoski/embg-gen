@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ЕМБГ Погодувач</title>
+	<link rel="stylesheet" href="/styles.css" />
+	<script src="/script.js" defer></script>
+</head>
+
+<body class="w-screen min-h-screen">
+	<main class="container max-w-screen-lg mx-auto px-6 py-12 flex flex-col gap-y-4">
+		<h1 class="text-3xl sm:text-4xl font-bold mb-3">Здраво мадрфакери!</h1>
+
+		<div class="grid grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 w-full max-w-sm sm:max-w-xl gap-x-3 gap-y-6">
+			<form id="embg-data-form" class="w-full flex flex-col gap-3">
+				<div class="flex flex-col gap-1">
+					<label for="date" class="font-semibold">Дата на раѓање:</label>
+					<input name="date" id="date" class="input" type="date" />
+				</div>
+
+				<div class="flex flex-col gap-1">
+					<label for="city" class="font-semibold">Град:</label>
+					<select name="city" id="city" class="input">
+						<option value="" disabled selected>Избери град...</option>
+						<option value="41">Битола</option>
+						<option value="42">Куманово</option>
+						<option value="43">Охрид</option>
+						<option value="44">Прилеп</option>
+						<option value="45">Скопје</option>
+						<option value="46">Струмица</option>
+						<option value="47">Тетово</option>
+						<option value="48">Велес</option>
+						<option value="49">Штип</option>
+					</select>
+				</div>
+
+				<div class="flex flex-col gap-1">
+					<label for="order" class="font-semibold">Редослед:</label>
+					<input name="order" id="order" placeholder="001" class="input" type="number" />
+				</div>
+
+				<div class="flex flex-col gap-1">
+					<label for="sex" class="font-semibold">Пол:</label>
+
+					<div class="flex flex-row items-center gap-x-1">
+						<input type="radio" id="male" name="sex" value="male" checked />
+						<label for="male">Маж</label>
+					</div>
+
+					<div class="flex flex-row items-center gap-x-1">
+						<input type="radio" id="female" name="sex" value="female" />
+						<label for="female">Жена</label>
+					</div>
+				</div>
+
+				<button class="button">Генерирај ЕМБГ</button>
+
+				<div id="error-cards" class="hidden flex-col gap-y-2 w-full">
+				</div>
+			</form>
+
+			<div class="flex flex-col gap-1">
+				<p class="font-bold">ЕМБГ:</p>
+				<input id="embg-output" class="input" type="text" disabled placeholder="0000000000000" />
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>
