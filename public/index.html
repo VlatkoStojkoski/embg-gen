@@ -11,11 +11,9 @@
 
 <body class="w-screen min-h-screen">
 	<main class="container max-w-screen-lg mx-auto px-6 py-12 flex flex-col gap-y-4">
-		<h1 class="text-3xl sm:text-4xl font-bold mb-3">Здраво!</h1>
-		<h2 class="text-xl sm:text-2xl font-bold mb-3"></h2>
-
-		<div class="grid grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 w-full max-w-sm sm:max-w-xl gap-x-3 gap-y-6">
+		<div class="grid grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 w-full max-w-sm sm:max-w-4xl mx-auto gap-x-6 gap-y-10">
 			<form id="embg-data-form" class="w-full flex flex-col gap-3">
+				<h1 class="text-3xl sm:text-4xl font-bold">Пронајдете ЕМБГ:</h1>
 				<div class="flex flex-col gap-1">
 					<label for="date" class="font-semibold">Дата на раѓање:</label>
 					<input name="date" id="date" class="input" type="date" />
@@ -47,26 +45,34 @@
 					<label for="sex" class="font-semibold">Пол:</label>
 
 					<div class="flex flex-row items-center gap-x-1">
-						<input type="radio" id="male" name="sex" value="male" checked />
-						<label for="male">Маж</label>
+						<input type="radio" id="sex-sex-male" name="sex" value="male" checked />
+						<label for="sex-male">Маж</label>
 					</div>
 
 					<div class="flex flex-row items-center gap-x-1">
-						<input type="radio" id="female" name="sex" value="female" />
-						<label for="female">Жена</label>
+						<input type="radio" id="sex-female" name="sex" value="female" />
+						<label for="sex-female">Жена</label>
 					</div>
 				</div>
 
-				<button class="button">Генерирај ЕМБГ</button>
+				<button class="button w-full sm:max-w-[80%] mx-auto">Генерирај ЕМБГ</button>
 
 				<div id="error-cards" class="hidden flex-col gap-y-2 w-full">
 				</div>
 			</form>
 
-			<div class="flex flex-col gap-1">
-				<p class="font-bold">ЕМБГ:</p>
-				<input id="embg-output" class="input" type="text" disabled placeholder="0000000000000" />
-			</div>
+			<form id="embg-number-form" class="w-full flex flex-col gap-3">
+				<h1 class="text-3xl sm:text-4xl font-bold">Пронајдете податоци:</h1>
+				<div class="flex flex-col gap-1">
+					<p class="font-semibold">ЕМБГ:</p>
+					<input name="embg-number" id="embg-number" class="input" type="text" placeholder="0000000000000" />
+				</div>
+
+				<button class="button w-full sm:max-w-[80%] mx-auto">Генерирај Податоци</button>
+
+				<div id="error-cards-embg" class="hidden flex-col gap-y-2 w-full">
+				</div>
+			</form>
 		</div>
 	</main>
 </body>
