@@ -151,13 +151,12 @@ const validateEmbg = (embg) => {
 
 const getDataFromEmbg = (embg) => {
 	const dateArr = embg.substring(0, 7).split('');
-	let date = [dateArr[4] + dateArr[5] + dateArr[6], dateArr[2] + dateArr[3], dateArr[0] + dateArr[1]];
+	const date = [dateArr[4] + dateArr[5] + dateArr[6], dateArr[2] + dateArr[3], dateArr[0] + dateArr[1]];
 	if (+date[0] < 30) {
 		date[0] = '2' + date[0];
 	} else {
 		date[0] = '1' + date[0];
 	}
-	date = date.join('-');
 
 	const city = embg.substring(7, 9);
 
@@ -165,9 +164,9 @@ const getDataFromEmbg = (embg) => {
 	const sex = +order < 500 ? 'male' : 'female';
 
 	return {
-		date,
+		date: date.join('-'),
 		city,
-		order,
+		order: (+order) % 500,
 		sex,
 	};
 }
